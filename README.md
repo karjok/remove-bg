@@ -39,8 +39,18 @@ $ input image file source: https://i.redd.it/oxjnv3nybnx71.jpg
 {'original': {'url': 'https://o.remove.bg/uploads/8fc6f083-ebd6-495a-b363-a629c0a5ab32/oxjnv3nybnx71.jpg'}, 'result': {'url': 'https://o.remove.bg/downloads/8fc6f083-ebd6-495a-b363-a629c0a5ab32/oxjnv3nybnx71-removebg-preview.png', 'width': 472, 'height': 529, 'rated': False, 'filename': 'oxjnv3nybnx71-removebg-preview.png', 'foreground_type': 'person'}, 'full': {'width': 680, 'height': 763, 'url': '/images/8fc6f083-ebd6-495a-b363-a629c0a5ab32/full_image'}}
 ```
 
+### Image result
+From this
 
-As a suggestion, use an online host to avoid captcha blocking although that will still happen.
+<img alt="chad image" src="https://i.redd.it/oxjnv3nybnx71.jpg" width="250">
+
+To this
+
+<img alt="chad image" src="https://o.remove.bg/downloads/8fc6f083-ebd6-495a-b363-a629c0a5ab32/oxjnv3nybnx71-removebg-preview.png" width="250">
+
+
+As a suggestion, use an online host like flask in heroku to avoid captcha blocking although that will still happen.
+
 
 Please contribute so that this scraper can be better
 
