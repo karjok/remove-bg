@@ -6,7 +6,10 @@ A simple python (scraper) tool for remove background on image
 
 ### Required module
 * requests
+* bs4
+
 > pip install requests
+> pip install bs4
 
 ### Function
 Remove-Bg has only one function named `'removeBg'`
@@ -31,6 +34,7 @@ $ {'original': {'url': 'https://o.remove.bg/uploads/8fc6f083-ebd6-495a-b363-a629
 ```
 
 #### - Use directly
+
 `$ python removebg.py`
 
 Output:
@@ -38,6 +42,33 @@ Output:
 $ input image file source: https://i.redd.it/oxjnv3nybnx71.jpg
 {'original': {'url': 'https://o.remove.bg/uploads/8fc6f083-ebd6-495a-b363-a629c0a5ab32/oxjnv3nybnx71.jpg'}, 'result': {'url': 'https://o.remove.bg/downloads/8fc6f083-ebd6-495a-b363-a629c0a5ab32/oxjnv3nybnx71-removebg-preview.png', 'width': 472, 'height': 529, 'rated': False, 'filename': 'oxjnv3nybnx71-removebg-preview.png', 'foreground_type': 'person'}, 'full': {'width': 680, 'height': 763, 'url': '/images/8fc6f083-ebd6-495a-b363-a629c0a5ab32/full_image'}}
 ```
+
+#### - With CLI
+
+`$ python cli.py -h`
+
+The usage:
+
+```
+usage: cli.py [-h] --input INPUT [--dir DIR] [--output OUTPUT] [--download]
+
+Remove-Bg
+
+options:
+  -h, --help            show this help message and exit
+  --input INPUT, -i INPUT
+                        Specify the input image file
+  --dir DIR             Specify the output directory
+  --output OUTPUT, -o OUTPUT
+                        Specify the output filename
+  --download, -d        Download the processed file
+```
+
+Example usage:
+
+`python cli.py --input myfile.jpg --dir Pictures --output mytransparentfile.png --download`
+
+The command above will send your input image and download the result to `Pictures` directory, with a new name `mytransparentfile.png`
 
 ### Image result
 From this
