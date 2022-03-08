@@ -71,11 +71,11 @@ The command above will send your input image and download the result to `Picture
 ### Image result
 From this
 
-<img alt="chad image" src="https://i.redd.it/oxjnv3nybnx71.jpg" width="250">
+<img alt="chad image" src="https://i.redd.it/oxjnv3nybnx71.jpg" width="200">
 
 To this
 
-<img alt="chad image" src="https://o.remove.bg/downloads/8fc6f083-ebd6-495a-b363-a629c0a5ab32/oxjnv3nybnx71-removebg-preview.png" width="250">
+<img alt="chad image" src="https://i.ibb.co/rpzkTtv/oxjnv3nybnx71-removebg-preview.png" width="200">
 
 
 As a suggestion, use an online host like flask in heroku to avoid captcha blocking although that will still happen.
