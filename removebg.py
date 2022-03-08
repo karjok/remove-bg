@@ -10,7 +10,7 @@ import re
 import time
 import random
 import json
-
+import os
 
 # setting up the Session class
 s = Session()
@@ -22,6 +22,23 @@ s.headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit
 s.headers["x-requested-with"] = "XMLHttpRequest"
 s.headers["origin"] = "https://www.remove.bg"
 
+def download(new_img, path=None, filename=None):
+    # If filename is not specified
+    if filename is None:
+        # Getting the default filename
+        filename = new_img.split("/")[-1]
+
+    # Send GET request to the result URL
+    r = get(new_img, allow_redirects=True)
+    
+    # If path is not specified
+    if path is None:
+        path = os.path.join(os.getcwd(), filename)
+
+    # Write to file
+    with open (os.path.join(path, filename), 'wb') as image_file:
+        image_file.write(r.content)
+    
 
 # Main function
 def removeBg(file_source,delay=1):
@@ -62,11 +79,14 @@ def removeBg(file_source,delay=1):
         
         # the final result (as json)
         result_json = json.loads(decode(res.json()["pl"]).decode("utf-8"))
-        print(result_json)
+
+        return result_json
     # if not, the fucking captcha will block us
     else:
         print("Invalid csrf or detected as spam")
         # print(r.text)
+
+        return None
 
 if __name__=="__main__":
 
@@ -75,4 +95,5 @@ if __name__=="__main__":
 
     # file source can be from local storage or url
     file_input = input("input image file source: ")
-    removeBg(file_input)
+    remove = removeBg(file_input)
+    print(remove)
