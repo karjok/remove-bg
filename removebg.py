@@ -34,9 +34,11 @@ def download(new_img, path=None, filename=None):
     # If path is not specified
     if path is None:
         path = os.path.join(os.getcwd(), filename)
+    else:
+        path = os.path.join(path, filename)
 
     # Write to file
-    with open (os.path.join(path, filename), 'wb') as image_file:
+    with open (path, 'wb') as image_file:
         image_file.write(r.content)
     
 
