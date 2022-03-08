@@ -6,10 +6,8 @@ A simple python (scraper) tool for remove background on image
 
 ### Required module
 * requests
-* bs4
 
 > pip install requests
-> pip install bs4
 
 ### Function
 Remove-Bg has only one function named `'removeBg'`
